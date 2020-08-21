@@ -1,0 +1,7 @@
+
+
+export enum doctorScheduleType {
+  CHANGE_NAME_DOCTOR = 'CHANGE_NAME_DOCTOR',
+  CHANGE_DATE = 'CHANGE_DATE',
+  GET_PATIENTS = 'GET_PATIENTS',
+}
