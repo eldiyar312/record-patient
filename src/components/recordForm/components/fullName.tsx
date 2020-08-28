@@ -7,6 +7,7 @@ import {
   MenuItem,
   Select,
   FormHelperText,
+  CircularProgress,
 } from '@material-ui/core';
 import { Action } from 'redux'
 import { connect } from 'react-redux';
@@ -83,10 +84,12 @@ function FullName ({ patientName, _id_doctor, changeNamePatient, changeNameDocto
           value={ _id_doctor }
         >
           {
-            doctorFullName &&
-              doctorFullName.map((doctor: any) => (
+            doctorFullName ?
+              doctorFullName.map(( doctor: any ) =>
                 <MenuItem value={doctor._id} key={doctor._id}>{doctor.fullName}</MenuItem>
-              ))
+              )
+              :
+              <CircularProgress />
           }
         </Select>
         <FormHelperText>{ helperTextDoctor }</FormHelperText>

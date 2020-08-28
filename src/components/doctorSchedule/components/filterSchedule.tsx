@@ -7,7 +7,8 @@ import {
   MenuItem,
   Select,
   FormHelperText,
-  Button
+  Button,
+  CircularProgress
 } from '@material-ui/core';
 import { Action } from 'redux'
 import { connect } from 'react-redux';
@@ -82,10 +83,12 @@ function FilterSchedule({ changeNameDoctor, _id_doctor, changeDate, date, doctor
             value={ _id_doctor }
           >
             {
-              doctorFullName &&
-                doctorFullName.map((doctor: any) => (
+              doctorFullName ?
+                doctorFullName.map(( doctor: any ) =>
                   <MenuItem value={doctor._id} key={doctor._id}>{doctor.fullName}</MenuItem>
-                ))
+                )
+              :
+              <CircularProgress />
             }
           </Select>
           <FormHelperText>{ helperTextDoctor }</FormHelperText>
