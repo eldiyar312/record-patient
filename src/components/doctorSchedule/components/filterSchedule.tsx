@@ -88,7 +88,7 @@ function FilterSchedule({ changeNameDoctor, _id_doctor, changeDate, date, doctor
                   <MenuItem value={doctor._id} key={doctor._id}>{doctor.fullName}</MenuItem>
                 )
               :
-              <CircularProgress />
+                <CircularProgress />
             }
           </Select>
           <FormHelperText>{ helperTextDoctor }</FormHelperText>
