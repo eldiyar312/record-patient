@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/record-patient/static/js/main.cdb1a0d2.chunk.js",
-    "main.js.map": "/record-patient/static/js/main.cdb1a0d2.chunk.js.map",
+    "main.js": "/record-patient/static/js/main.9aaeaa01.chunk.js",
+    "main.js.map": "/record-patient/static/js/main.9aaeaa01.chunk.js.map",
     "runtime-main.js": "/record-patient/static/js/runtime-main.20fea772.js",
     "runtime-main.js.map": "/record-patient/static/js/runtime-main.20fea772.js.map",
-    "static/js/2.b0f14b63.chunk.js": "/record-patient/static/js/2.b0f14b63.chunk.js",
-    "static/js/2.b0f14b63.chunk.js.map": "/record-patient/static/js/2.b0f14b63.chunk.js.map",
+    "static/js/2.8850270c.chunk.js": "/record-patient/static/js/2.8850270c.chunk.js",
+    "static/js/2.8850270c.chunk.js.map": "/record-patient/static/js/2.8850270c.chunk.js.map",
     "index.html": "/record-patient/index.html",
-    "precache-manifest.7291ce2894e919c4cb5807210012966d.js": "/record-patient/precache-manifest.7291ce2894e919c4cb5807210012966d.js",
+    "precache-manifest.4821c6bef86bc0bcc67e2c812d269776.js": "/record-patient/precache-manifest.4821c6bef86bc0bcc67e2c812d269776.js",
     "service-worker.js": "/record-patient/service-worker.js",
-    "static/js/2.b0f14b63.chunk.js.LICENSE.txt": "/record-patient/static/js/2.b0f14b63.chunk.js.LICENSE.txt"
+    "static/js/2.8850270c.chunk.js.LICENSE.txt": "/record-patient/static/js/2.8850270c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.20fea772.js",
-    "static/js/2.b0f14b63.chunk.js",
-    "static/js/main.cdb1a0d2.chunk.js"
+    "static/js/2.8850270c.chunk.js",
+    "static/js/main.9aaeaa01.chunk.js"
   ]
 }
