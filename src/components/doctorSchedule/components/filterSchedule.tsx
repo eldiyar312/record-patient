@@ -1,5 +1,5 @@
 import 'date-fns';
-import React, { Dispatch, useEffect, useState } from 'react';
+import React, { Dispatch, ReactFragment, useEffect, useState } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {
   FormControl,
@@ -19,11 +19,27 @@ import { action } from '../../../store'
 import { request } from '../../../api/request'
 import CustomizedSnackbar from '../../../feedback/Snackbar'
 
+interface Props {
+  changeNameDoctor: (name: string) => void, 
+  _id_doctor: string, 
+  changeDate: (date: string) => void, 
+  date: string, 
+  doctorFullName: Array<object> | null, 
+  getPatients: (patients: Array<object> | null) => void,
+}
 
 
-function FilterSchedule({ changeNameDoctor, _id_doctor, changeDate, date, doctorFullName, getPatients }: any) {
+const FilterSchedule: React.FC<Props> = ({ 
+  changeNameDoctor, 
+  _id_doctor, 
+  changeDate, 
+  date, 
+  doctorFullName, 
+  getPatients
+}) => {
+
   const classes = useStyles()
-  const [ helperTextDoctor, setHelperTextDoctor ] = useState<string>('')
+  const [ helperTextDoctor, setHelperTextDoctor ] = useState('')
   const [ errorDoctor, setErrorDoctor ] = useState( false )
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: '' })
   const [button, setButton] = useState( false )
@@ -99,7 +115,7 @@ function FilterSchedule({ changeNameDoctor, _id_doctor, changeDate, date, doctor
               margin="normal"
               id="date-picker-dialog"
               label="Дата записи"
-              format="MM/dd/yyyy"
+              format="dd/MM/yyyy"
               value={ date }
               onChange={ handleDateChange }
               KeyboardButtonProps={{

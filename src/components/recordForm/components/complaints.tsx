@@ -11,8 +11,24 @@ import { action } from '../../../store'
 import { request } from '../../../api/request'
 import CustomizedSnackbar from '../../../feedback/Snackbar'
 
+interface Props {
+  patient: string, 
+  _id_doctor: string, 
+  date: string, 
+  time: string, 
+  complaints: string, 
+  changeComplaints: (complaint: string) => void,
+}
 
-function Complaints ({ patient, _id_doctor, date, time, complaints, changeComplaints }: any ) {
+const Complaints: React.FC<Props> = ({ 
+  patient, 
+  _id_doctor, 
+  date, 
+  time, 
+  complaints, 
+  changeComplaints,
+}) => {
+
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: '' })
   const [button, setButton] = useState( false )
 

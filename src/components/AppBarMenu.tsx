@@ -10,8 +10,11 @@ import { connect } from 'react-redux';
 import { action } from '../store'
 import { get } from '../api/getDoctors'
 
+interface Props {
+  changeDoctorFullName: (name: string) => void
+}
 
-function AppBarMenu({ changeDoctorFullName }: any){
+const AppBarMenu: React.FC<Props> = ({ changeDoctorFullName }) => {
   const classes = useStyles()
 
   useEffect(() => {

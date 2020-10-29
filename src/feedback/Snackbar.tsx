@@ -7,8 +7,13 @@ function Alert(props: AlertProps) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
+interface Props {
+  open: boolean, 
+  message: string, 
+  severity: any,
+}
 
-export default function CustomizedSnackbar({ open = false, message = '', severity = 'success'}: any) {
+const CustomizedSnackbar: React.FC<Props> = ({ open = false, message = '', severity = 'success' }) => {
   const classes = useStyles()
   
   const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
@@ -30,6 +35,8 @@ export default function CustomizedSnackbar({ open = false, message = '', severit
     </div>
   );
 }
+
+export default CustomizedSnackbar
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {

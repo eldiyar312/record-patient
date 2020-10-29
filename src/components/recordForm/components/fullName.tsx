@@ -15,12 +15,24 @@ import { connect } from 'react-redux';
 import { RootState } from '../../../store'
 import { action } from '../../../store'
 
+interface Props {
+  patientName: string, 
+  _id_doctor: string, 
+  changeNamePatient: (name: string) => void, 
+  changeNameDoctor: (name: string) => void, 
+  doctorFullName: Array<object> | null,
+}
 
-
-function FullName ({ patientName, _id_doctor, changeNamePatient, changeNameDoctor, doctorFullName }: any ) {
+const FullName: React.FC<Props> = ({ 
+  patientName, 
+  _id_doctor, 
+  changeNamePatient, 
+  changeNameDoctor, 
+  doctorFullName
+}) => {
   const classes = useStyles()
-  const [helperTextPatient, setHelperTextPatient] = useState<string>('')
-  const [helperTextDoctor, setHelperTextDoctor] = useState<string>('')
+  const [helperTextPatient, setHelperTextPatient] = useState('')
+  const [helperTextDoctor, setHelperTextDoctor] = useState('')
   const [errorPatient, setErrorPatient] = useState( false )
   const [errorDoctor, setErrorDoctor] = useState( false )
 

@@ -10,7 +10,7 @@ import RecordForm from '../components/recordForm/recordForm'
 import AppBarMenu from '../components/AppBarMenu'
 
 
-export default function AppStack() {
+const AppStack = () => {
   return (
     <>
       <AppBarMenu />
@@ -22,3 +22,5 @@ export default function AppStack() {
     </>
   )
 }
+
+export default AppStack

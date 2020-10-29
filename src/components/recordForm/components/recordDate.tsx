@@ -1,5 +1,5 @@
 import 'date-fns';
-import React, { Dispatch } from 'react';
+import React, { Dispatch, HtmlHTMLAttributes } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {
   FormControl,
@@ -15,9 +15,14 @@ import { connect } from 'react-redux';
 import { RootState } from '../../../store'
 import { action } from '../../../store'
 
+interface Props {
+  date: string, 
+  time: string, 
+  changeDate: (date: string) => void, 
+  changeTime: (time: string) => void,
+}
 
-
-function ReacordDate ({ date, time, changeDate, changeTime }: any ) {
+const ReacordDate: React.FC<Props> = ({ date, time, changeDate, changeTime }) => {
   const classes = useStyles()
 
   const hour = ['09', '10', '11', '12', '13', '14', '15', '16', '17']
@@ -32,7 +37,9 @@ function ReacordDate ({ date, time, changeDate, changeTime }: any ) {
     }
   }
 
-
+  const handleSelectChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    changeTime( event.target.value as string )
+  }
 
   return (
     <div className={classes.root}>
@@ -57,7 +64,7 @@ function ReacordDate ({ date, time, changeDate, changeTime }: any ) {
           id="demo-simple-select-outlined"
           label="Age"
           value={ time }
-          onChange={time => changeTime( time.target.value )}
+          onChange={handleSelectChange}
         >
           {
             hour.map(hour => (

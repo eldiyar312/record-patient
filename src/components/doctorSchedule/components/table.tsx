@@ -18,15 +18,20 @@ import { action } from '../../../store'
 import { request } from '../../../api/request'
 import CustomizedSnackbar from '../../../feedback/Snackbar'
 
+interface Props {
+  patients: any,
+  getPatients: (patients: Array<object> | null) => void,
+}
 
 
-function SimpleTable({ patients, getPatients }: any) {
+const SimpleTable: React.FC<Props> = ({ patients, getPatients }) => {
   const classes = useStyles()
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: '' })
   const [button, setButton] = useState( false )
 
 
-  const handleClickDelete = ( _id:string ) => {
+  // delete patient
+  const handleClickDelete = ( _id: string ) => {
     setButton( true )
 
     request('/delete/patient', 'POST', { _id })
@@ -36,9 +41,11 @@ function SimpleTable({ patients, getPatients }: any) {
       })
 
     // remove array patients in reducer
-    const patient = patients.find((item: any) => item._id = _id)
-    const arr = patients.filter((n: any) => n._id !== patient._id)
+    const patient = patients.find((item: {_id: string}) => item._id = _id)
+    const arr = patients.filter((n: {_id: string}) => n._id !== patient._id)
     getPatients( arr )
+
+    // убрать возможность клик на кнопку
     setButton( false )
   }
 

@@ -6,7 +6,7 @@ import ReacordDate from './components/recordDate'
 import Complaints from './components/complaints'
 
 
-function ReacordForm () {
+const ReacordForm = () => {
   const classes = useStyles()
   
 
